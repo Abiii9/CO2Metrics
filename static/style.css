@@ -42,11 +42,36 @@ body {
   padding: 20px;
 }
 .banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 800px;
   text-align: center;
 }
 .banner-h1 {
   font-family: "Concert One", cursive;
+}
+.banner-p-info {
+  margin-bottom: 10px;
+}
+/*Buttons*/
+.btn {
+  text-decoration: none;
+  color: black;
+  display: block;
+  max-width: 150px;
+  background: transparent;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn:hover {
+  color: rgb(129, 122, 122);
+  border-color: rgb(129, 122, 122);
 }
 .footer {
   display: flex;
