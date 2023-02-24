@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CO2Metrics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&family=Hind+Vadodara:wght@300&family=Tourney:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <section class="section">
+      <div class="header">
+        <i class="fa-solid fa-smog logo"></i>
+        <i class="fa-solid fa-bars menu"></i>
+      </div>
+      <div class="content" id="content">
+        {% block content %}
+        <div class="banner">
+          <h1 class="banner-h1">Welcome to CO2 Metrics!</h1>
+          <p class="banner-p">
+            Here you can find the information about the CO2 emissions by
+            different countries across various industries.
+          </p>
+          <p class="banner-p-info">
+            Every year, tonnes of Carbondioxide is released in to the atmosphere
+            due to various activities of mankind.<br />
+            This carbondioxide traps heat, increasing the average temparature of
+            the earth. This has been causing adverse effects such as melting of
+            ice bergs, raising the sea levels etc. <br />This website provides a
+            visualization of the carbondioxide emissions from 45 countries
+            across different industries.
+          </p>
+        </div>
+        {% endblock %}
+      </div>
+      <div class="footer" id="footer">
+        <p class="footer-p">&copy; Abinaya Elangovan,2023</p>
+        <div class="footer-div">
+          <a href="" class="icon-github"
+            ><i class="icon fa-brands fa-github"></i
+          ></a>
+          <a href="" class="icon-lnkedin"
+            ><i class="icon fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/94acf9112d.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
