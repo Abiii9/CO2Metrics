@@ -5,7 +5,7 @@ with open("model/countriesSchema.sql") as f:
 	conn.executescript(f.read())
 
 cur = conn.cursor()
-with open('model/countries.csv') as f:
+with open('model/Countries.csv') as f:
     reader = csv.reader(f,delimiter=',')
     #Skipping the header line
     next(reader)

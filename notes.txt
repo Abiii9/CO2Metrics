@@ -3,3 +3,6 @@ Table2: indicator,description, country code(FK),unit,industries (PK)
 countrycode(FK), industries(FK), years, average emission per industry (all years/numofyears)
 
 average emission throughout (addition of all years/numbers)
+
+
+table2: industry industry name
