@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS countries;
+
+CREATE TABLE countries(
+	ISO3 TEXT PRIMARY KEY,
+	CountryName TEXT NOT NULL
+);
