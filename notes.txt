@@ -6,3 +6,25 @@ average emission throughout (addition of all years/numbers)
 
 
 table2: industry industry name
+
+source venv/Scripts/activate  
+
+
+How to make the result of query appear on he same page.
+join statement 
+
+    conn = sqlite3.connect("model/countries.db")
+    cur = conn.cursor()
+    country_id = cur.execute("SELECT ISO3 FROM countries WHERE CountryName = ?", [country]).fetchone()
+    conn.close()
+    conn1 = sqlite3.connect("model/industries.db")
+    cur=conn1.cursor()
+    industries = cur.execute("SELECT IndustryName FROM industries").fetchall()
+    conn1.close()
+    conn2 = sqlite3.connect("model/emissions.db")
+    conn2.row_factory = sqlite3.Row
+    cur = conn2.cursor()
+    names = cur.execute("SELECT * FROM emissions").fetchone()
+    name = names.keys()
+    emissions = cur.execute("SELECT * FROM emissions WHERE Country_id=?",country_id).fetchall()
+    conn2.close()

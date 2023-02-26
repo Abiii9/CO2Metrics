@@ -7,6 +7,7 @@ body {
   margin: 0;
   font-family: "Hind Vadodara", sans-serif;
   background-color: #aee2ff;
+  overflow-x: hidden;
 }
 .logo {
   font-size: 50px;
@@ -34,11 +35,11 @@ body {
   align-items: center;
 }
 .header {
-  height: 150px;
+  height: 100px;
   font-family: "Rubik 80s Fade", cursive;
 }
 .content {
-  min-height: 500px;
+  min-height: 400px;
   padding: 20px;
 }
 .banner {
@@ -93,4 +94,91 @@ body {
 .icon {
   color: black;
   font-size: 20px;
+}
+
+/*BACkGROUND CLOUDS*/
+/* Inspired from https://codepen.io/antonioescudero/pen/zrxGve */
+.clouds {
+  z-index: -100;
+}
+.cloud {
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  border-radius: 200px;
+  position: relative;
+  opacity: 0.5;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  top: -15px;
+  left: 10px;
+  border-radius: 100px;
+  transform: rotate(30deg);
+}
+.cloud::after {
+  width: 80px;
+  height: 80px;
+  top: -55px;
+  right: 15px;
+  left: auto;
+}
+
+.cloud1 {
+  top: 50px;
+  left: 50px;
+  animation: passingCloud 10s linear infinite;
+}
+.cloud2 {
+  left: 200px;
+  top: 100px;
+  animation: passingCloud 15s linear infinite;
+}
+.cloud3 {
+  left: 250px;
+  top: 150px;
+  animation: passingCloud 20s linear infinite;
+}
+
+@keyframes passingCloud {
+  0% {
+    margin-left: 1000px;
+  }
+  100% {
+    margin-right: -1000px;
+  }
+}
+
+/*******************************************************************************/
+/*FORMS*/
+.form {
+  padding: 20px;
+  background-color: #b9f3fc;
+  border-radius: 5px;
+}
+.form .label {
+  padding: 15px;
+}
+.form select {
+  background-color: whitesmoke;
+  border-radius: 50px;
+}
+.btn-submit {
+  padding: 5px 20px;
+  border-radius: 50px;
+}
+
+/**************METRICS DIV************************/
+
+.metrics-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
