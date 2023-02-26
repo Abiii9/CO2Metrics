@@ -182,3 +182,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+/**********TABLE******************************/
+
+.table {
+  border: 2px solid white;
+  margin: 20px;
+  text-align: center;
+}
+
+.table tr {
+  background-color: whitesmoke;
+}

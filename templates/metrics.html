@@ -12,11 +12,19 @@
     <br />
     <label class="label" for="year">Year</label>
     <select name="year" id="year-select">
+      <option class="option" value="allyears">All years</option>
       {%for name in names%}
       <option class="option" value="{{name}}">{{name}}</option>
       {%endfor%}
     </select>
     <br />
+    <label class="label" for="industry">Industry</label>
+    <select name="industry" id="industry-select">
+      <option class="option" value="allindustries">All industries</option>
+      {%for industry in industries%}
+      <option class="option" value="{{industry[1]}}">{{industry[1]}}</option>
+      {%endfor%}
+    </select>
     <label class="label" for="tabular">tabular</label>
     <input type="radio" id="tabular" name="view" value="tabular" />
     <label class="label" for="graph">graph</label>
@@ -24,9 +32,26 @@
     <input class="btn btn-submit" type="submit" onclick="submit" />
   </form>
   <div class="output">
-    {% if data %} {% for val in data %}
-    <div class="result">{{val}}</div>
-    {%endfor%} {%endif%}
+    {% if data %}
+    <table class="table">
+      <tr>
+        <th>Indicator</th>
+        <th>Industry</th>
+        {% if year%}
+        <th>{{year}}</th>
+        {%else%} {% for i in range(11)%}
+        <th>{{2008+i}}</th>
+        {%endfor%} {%endif%}
+      </tr>
+      {% for val in data %}
+      <tr>
+        {%for i in range(columns)%}
+        <td>{{val[i]}}</td>
+        {%endfor%}
+      </tr>
+      {%endfor%}
+    </table>
+    {%endif%}
   </div>
 </div>
 {% endblock %}
