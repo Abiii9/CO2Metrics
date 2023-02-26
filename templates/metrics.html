@@ -2,7 +2,7 @@
 <div class="metrics-div">
   <h1 class="metrics-h1">Please input your criteria</h1>
 
-  <form action="{{url_for('metricsquery')}}" method="get" class="form">
+  <form action="{{url_for('metrics')}}" method="get" class="form">
     <label class="label" for="country">Country</label>
     <select name="country" id="country-select">
       {%for row in rows%}
@@ -23,6 +23,10 @@
     <input type="radio" id="graph" name="view" value="graph" />
     <input class="btn btn-submit" type="submit" onclick="submit" />
   </form>
-  <div class="output">{% include 'result.html' %}</div>
+  <div class="output">
+    {% if data %} {% for val in data %}
+    <div class="result">{{val}}</div>
+    {%endfor%} {%endif%}
+  </div>
 </div>
 {% endblock %}

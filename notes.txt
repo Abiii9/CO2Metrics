@@ -28,3 +28,6 @@ join statement
     name = names.keys()
     emissions = cur.execute("SELECT * FROM emissions WHERE Country_id=?",country_id).fetchall()
     conn2.close()
+
+
+    {{url_for('metricsquery')}}

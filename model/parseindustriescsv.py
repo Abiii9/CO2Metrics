@@ -1,6 +1,6 @@
 import csv
 import sqlite3
-conn = sqlite3.connect("model/industries.db")
+conn = sqlite3.connect("model/emission-data.db")
 with open("model/industriesSchema.sql") as f:
 	conn.executescript(f.read())
 

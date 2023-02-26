@@ -2,7 +2,7 @@ import sqlite3
 import csv
 pointer = 0
 #connecting to countries database to fetch all entries from it
-conn = sqlite3.connect('model/countries.db')
+conn = sqlite3.connect('model/emission-data.db')
 cur = conn.cursor()
 countries = cur.execute("SELECT * FROM countries").fetchall()
 country_list = []
@@ -11,7 +11,7 @@ for country in countries:
 conn.close()
 
 #connecting to industries database to fetch all values from it.
-conn = sqlite3.connect('model/industries.db')
+conn = sqlite3.connect('model/emission-data.db')
 cur = conn.cursor()
 industries = cur.execute("SELECT * FROM industries").fetchall()
 industry_list = []
@@ -19,7 +19,7 @@ for industry in industries:
 	industry_list.append(industry[0])
 conn.close()
 #connecting to emissions database to insert values to it.
-conn = sqlite3.connect('model/emissions.db')
+conn = sqlite3.connect('model/emission-data.db')
 cur = conn.cursor()
 
 with open("model/emissionsSchema.sql") as f:
