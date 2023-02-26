@@ -26,7 +26,8 @@ def metrics():
         conn = sqlite3.connect("model/emission-data.db")
         cur = conn.cursor()
         country_id = cur.execute("SELECT ISO3 FROM countries WHERE CountryName=?", [country]).fetchone()
-        data = cur.execute("SELECT * FROM emissions WHERE Country_id=?", country_id).fetchall()
+        #fetcheddata = cur.execute("SELECT * FROM emissions WHERE Country_id = ?", country_id).fetchall()
+        data = cur.execute("SELECT emissions.Indicator,industries.IndustryName,emissions.F2008,emissions.F2009,emissions.F2010,emissions.F2011,emissions.F2012,emissions.F2013 FROM emissions LEFT OUTER JOIN industries ON emissions.Industry_id = industries.Industry_id WHERE Country_id = ?", country_id).fetchall()
         conn.close()
     else:
         data=None
