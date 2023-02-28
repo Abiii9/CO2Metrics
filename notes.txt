@@ -31,3 +31,5 @@ join statement
 
 
     {{url_for('metricsquery')}}
+
+    (country_id[0],industry_id[0])

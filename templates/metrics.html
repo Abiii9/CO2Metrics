@@ -43,13 +43,19 @@
         <th>{{2008+i}}</th>
         {%endfor%} {%endif%}
       </tr>
-      {% for val in data %}
+      {%if industry%}
+      <tr>
+        {% for val in data %}
+        <td>{{val}}</td>
+        {%endfor%}
+      </tr>
+      {%else%} {% for val in data %}
       <tr>
         {%for i in range(columns)%}
         <td>{{val[i]}}</td>
         {%endfor%}
       </tr>
-      {%endfor%}
+      {%endfor%} {%endif%}
     </table>
     {%endif%}
   </div>
