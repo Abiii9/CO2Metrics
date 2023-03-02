@@ -4,7 +4,6 @@ from wsgiref import simple_server
 from wsgiref.simple_server import WSGIRequestHandler
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from shopping import app
 
 # Use the chrome driver specific to your version of Chrome browser and put it in ./driver directory
 CHROME_DRIVER = os.path.join(os.path.join(os.path.dirname(__file__), 'driver'), 'chromedriver')
