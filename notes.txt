@@ -33,3 +33,26 @@ join statement
     {{url_for('metricsquery')}}
 
     (country_id[0],industry_id[0])
+fig,ax=plt.subplots(figsize=(6,6))
+ax=sns.set(style="darkgrid")
+# df = sns.load_dataset("penguins")
+@app.route('/visualize')
+def visualize(): 
+    if(len(dataList) > 0):
+        plotdata = {'years':['F2008','F2009','F2010','F2011','F2012','F2013','F2014','F2015','F2016','F2017','F2018'],'industries': dataList}
+        df = pd.DataFrame(plotdata)
+        print(dataList)
+        sns.barplot(data=df, x="years", y="industries")
+        canvas=FigureCanvas(fig)
+        img = io.BytesIO()
+        fig.savefig(img)
+        img.seek(0)
+    else:
+        plotdata = {'years': ['F2008','F2009','F2010'], 'industries': [8.77,9.77,5.67]}
+        df = pd.DataFrame(plotdata)
+        sns.barplot(data=df, x="years", y="industries")
+        canvas=FigureCanvas(fig)
+        img = io.BytesIO()
+        fig.savefig(img)
+        img.seek(0)
+    return send_file(img,mimetype='img/png')

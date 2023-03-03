@@ -1,0 +1,25 @@
+{% extends "index.html" %} {% block content %}
+<div class="graph-div">
+  <form action="{{url_for('graph')}}" method="get" class="form">
+    <label class="label" for="country">Country</label>
+    <select name="country" id="country-select">
+      {%for row in rows%}
+      <option class="option" value="{{row[1]}}">{{row[1]}}</option>
+      {%endfor%}
+    </select>
+    <br />
+    <label class="label" for="industry">Industry</label>
+    <select name="industry" id="industry-select">
+      {%for industry in industries%}
+      <option class="option" value="{{industry[1]}}">{{industry[1]}}</option>
+      {%endfor%}
+    </select>
+    <br />
+    <input class="btn btn-submit" type="submit" onclick="submit" />
+  </form>
+  <div class="output-graph">
+    <h4>CO2 emissions by {{country}} due to {{industry}}</h4>
+    <img src="{{ url_for('visualize') }}" />
+  </div>
+</div>
+{% endblock %}

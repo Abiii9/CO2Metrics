@@ -25,13 +25,10 @@
       <option class="option" value="{{industry[1]}}">{{industry[1]}}</option>
       {%endfor%}
     </select>
-    <label class="label" for="tabular">tabular</label>
-    <input type="radio" id="tabular" name="view" value="tabular" />
-    <label class="label" for="graph">graph</label>
-    <input type="radio" id="graph" name="view" value="graph" />
     <input class="btn btn-submit" type="submit" onclick="submit" />
   </form>
   <div class="output">
+    <h4>{{country}}</h4>
     {% if data %}
     <table class="table">
       <tr>

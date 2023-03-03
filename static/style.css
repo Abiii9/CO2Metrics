@@ -193,3 +193,11 @@ body {
 .table tr {
   background-color: whitesmoke;
 }
+
+.output h4 {
+  text-align: center;
+}
+
+.output-graph {
+  text-align: center;
+}
