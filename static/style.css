@@ -2,13 +2,14 @@
 * {
   box-sizing: border-box;
 }
-
+/*STYLE SPECIFICATION FOR THE BODY*/
 body {
   margin: 0;
   font-family: "Hind Vadodara", sans-serif;
   background-color: #aee2ff;
   overflow-x: hidden;
 }
+/*STYLE SPECIFICATION FOR THE INDEX PAGE*/
 .logo {
   font-size: 50px;
   padding: 10px;
@@ -97,7 +98,7 @@ body {
   font-size: 20px;
 }
 
-/*BACkGROUND CLOUDS*/
+/*BACKGROUND CLOUDS*/
 /* Inspired from https://codepen.io/antonioescudero/pen/zrxGve */
 .clouds {
   z-index: -100;
@@ -157,6 +158,7 @@ body {
 }
 
 /*******************************************************************************/
+/*STYLE SPECIFICATION FOR METRICS PAGE*/
 /*FORMS*/
 .form {
   padding: 20px;
@@ -175,7 +177,7 @@ body {
   border-radius: 50px;
 }
 
-/**************METRICS DIV************************/
+/*METRICS DIV*/
 
 .metrics-div {
   display: flex;
@@ -183,7 +185,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-/**********TABLE******************************/
+
+/*TABLE*/
 
 .table {
   border: 2px solid white;
@@ -198,6 +201,8 @@ body {
 .output h4 {
   text-align: center;
 }
+
+/*STYLE SPECIFICATION FOR THE GRAPH PAGE*/
 
 .output-graph {
   text-align: center;

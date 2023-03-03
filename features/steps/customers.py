@@ -12,7 +12,7 @@ def click(context):
     """ 
     find the desired form in the page
     """
-    context.browser.find_element_by_partial_link_text('2').click()
+    context.browser.find_element_by_partial_link_text('metrics').click()
 
 @then(u'I should see the filtered output table of CO2 emissions data')
 def details(context):
@@ -21,5 +21,5 @@ def details(context):
     """
     # use print(context.browser.page_source) to aid debugging
     print(context.browser.page_source)
-    assert context.browser.current_url == 'http://localhost:5000/metrics'
-    assert '01595 Amanda Loaf' in context.browser.page_source
+    assert context.browser.current_url == 'http://localhost:5000/metrics?country=Belgium&year=F2011&industry=Administrative+and+support+services'
+    assert 'CO2 emissions	Administrative and support services	0.817' in context.browser.page_source

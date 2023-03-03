@@ -1,7 +1,9 @@
+'''Importing the required modules'''
 import sqlite3
 import csv
+'''adding a pointer variable'''
 pointer = 0
-#connecting to countries database to fetch all entries from it
+'''connecting to countries database to fetch all entries from it'''
 conn = sqlite3.connect('model/emission-data.db')
 cur = conn.cursor()
 countries = cur.execute("SELECT * FROM countries").fetchall()
@@ -10,7 +12,7 @@ for country in countries:
 	country_list.append(country[0])
 conn.close()
 
-#connecting to industries database to fetch all values from it.
+'''connecting to industries database to fetch all values from it.'''
 conn = sqlite3.connect('model/emission-data.db')
 cur = conn.cursor()
 industries = cur.execute("SELECT * FROM industries").fetchall()
@@ -21,10 +23,11 @@ conn.close()
 #connecting to emissions database to insert values to it.
 conn = sqlite3.connect('model/emission-data.db')
 cur = conn.cursor()
-
+'''executing the sql file'''
 with open("model/emissionsSchema.sql") as f:
 	conn.executescript(f.read())
 rows = []
+'''reading values from the emissions file and adding it to the database tables'''
 with open("model/Emission.csv") as f:
 	reader = csv.reader(f,delimiter=',')
 	next(reader)

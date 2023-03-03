@@ -1,4 +1,10 @@
+'''Import sqlite3 for database interaction'''
 import sqlite3
+
+'''Creating a class Modeldata to interact with the database.
+This class has been created in order to prevent direct interaction to the database from the app.py.
+This can be considered as an API to the emission-data database.'''
+
 class Modeldata:
     def __init__(self,name):
         self.name = name
@@ -36,15 +42,7 @@ class Modeldata:
         self.conn.close()
 
 
+'''Creating objects for each of the tables in the database.'''
 countries = Modeldata('countries')
 industries = Modeldata('industries')
 emissions = Modeldata('emissions')
-#print(countries.open_connection())
-# print(emissions.left_outer_join({
-#     'colnames': "emissions.Indicator,industries.IndustryName,emissions.F2008,emissions.F2009,emissions.F2010,emissions.F2011,emissions.F2012,emissions.F2013,emissions.F2014,emissions.F2015,emissions.F2016,emissions.F2017,emissions.F2018",
-#     'condition': {"country_id":"IND","industry_id": 5}
-# }))
-# print(emissions.left_outer_join({
-#     'colnames': f'emissions.Indicator,industries.IndustryName,emissions.{year}',
-#     'condition': {"country_id":"IND","industry_id": 5}
-# }))
